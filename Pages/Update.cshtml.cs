@@ -27,7 +27,7 @@ namespace AguaTrack.Pages
 
         private AguaModel GetById(int id)
         {
-            var aguaRegistro = new AguaModel();
+            var aguaRecord = new AguaModel();
 
             using (var connection = new SqliteConnection(_configuration.GetConnectionString("ConnectionString")))
             {
@@ -41,12 +41,12 @@ namespace AguaTrack.Pages
                 while (reader.Read())
                 {
 
-                    aguaRegistro.Id = reader.GetInt32(0);
-                    aguaRegistro.Fecha = DateTime.Parse(reader.GetString(1), CultureInfo.CurrentUICulture.DateTimeFormat);
-                    aguaRegistro.Cantidad = reader.GetInt32(2);
+                    aguaRecord.Id = reader.GetInt32(0);
+                    aguaRecord.Fecha = DateTime.Parse(reader.GetString(1), CultureInfo.CurrentUICulture.DateTimeFormat);
+                    aguaRecord.Cantidad = reader.GetInt32(2);
                 }
 
-                return aguaRegistro;
+                return aguaRecord;
 
             }
         }
@@ -64,7 +64,7 @@ namespace AguaTrack.Pages
                 var tableCmd = connection.CreateCommand();
 
                 tableCmd.CommandText =
-                   $"UPDATE drinking_water SET date ='{Agua.Fecha}', quantity = {Agua.Fecha} WHERE Id = {Agua.Id}";
+                   $"UPDATE drinking_water SET date ='{Agua.Fecha}', quantity = {Agua.Cantidad} WHERE Id = {Agua.Id}";
 
                 tableCmd.ExecuteNonQuery();
             }
