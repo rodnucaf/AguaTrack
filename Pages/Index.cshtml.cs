@@ -20,7 +20,7 @@ namespace AguaTrack.Pages
 
         public void OnGet()
         {
-            GetAllRegistros();
+            Registro = GetAllRegistros();
         }
 
         private List<AguaModel> GetAllRegistros()
