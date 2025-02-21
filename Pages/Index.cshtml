@@ -5,3 +5,35 @@
 }
 
 <a button type="button" class="btn btn-success" asp-area="" asp-page="/Create">Agregar registro</a>
+
+<table id="records" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Registro[0].Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Registro[0].Cantidad)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var registro in Model.Registro)
+        {
+            <tr class="list-row">
+                <td>@Html.DisplayFor(modelItem => registro.Fecha)</td>
+                <td>@Html.DisplayFor(modelItem => registro.Cantidad)</td>
+                <td>
+                    <a button type="button" class="btn-primary" asp-page="./Delete" asp-route-id="@registro.Id" >Borrar</a>
+                    <a button type="button" class="btn-primary" asp-page="./Actualizar" asp-route-id="@registro.Id">Actualizar</a>
+                    
+                </td>
+            </tr>
+        
+        
+        
+        }
+
+    </tbody>
+
+</table>
