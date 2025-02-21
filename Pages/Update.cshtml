@@ -2,3 +2,36 @@
 @model AguaTrack.Pages.UpdateModel
 @{
 }
+
+<h4>Modificar registro</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <input type="hidden" asp-for="Agua.Id" />
+            <div class="form-group">
+                <label asp-for="Agua.Fecha" class="control-label"></label>
+                <input type="date" asp-for="Agua.Fecha" class="form-control" />
+                <span asp-validation-for="Agua.Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Agua.Cantidad" class="control-label"></label>
+                <input asp-for="Agua.Cantidad" class="form-control" />
+                <span asp-validation-for="Agua.Cantidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Volver al listado</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
