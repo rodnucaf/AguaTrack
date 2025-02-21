@@ -14,7 +14,9 @@ namespace AguaTrack.Pages
 
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGet() { return Page(); }
+
+        public IActionResult OnPost()
         {
             if (!ModelState.IsValid) 
             {
