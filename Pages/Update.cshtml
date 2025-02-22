@@ -3,7 +3,7 @@
 @{
 }
 
-<h4>Modificar registro.</h4>
+<h4>Modificar registro</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -12,7 +12,7 @@
             <div class="form-group">
                 <label asp-for="Agua.Fecha" class="control-label"></label>
                 <input type="date" asp-for="Agua.Fecha" class="form-control" />
-                <span asp-validation-for="Agua.Fecha   " class="text-danger"></span>
+                <span asp-validation-for="Agua.Fecha" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Agua.Cantidad" class="control-label"></label>
@@ -20,14 +20,14 @@
                 <span asp-validation-for="Agua.Cantidad" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Update" class="btn btn-primary" />
+                <input type="submit" value="Actualizar" class="btn btn-primary btn-lg" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Index">Volver al listado</a>
+    <a class="btn btn-secondary btn-sm" asp-page="./Index"><i class="fas fa-arrow-left"></i> Volver al listado</a>
 </div>
 
 @section Scripts {

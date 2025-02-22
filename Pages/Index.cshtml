@@ -4,7 +4,9 @@
     ViewData["Title"] = "Home page";
 }
 
-<a button type="button" class="btn btn-success" asp-area="" asp-page="/Create">Agregar registro</a>
+<a class="btn btn-success btn-sm" asp-area="" asp-page="/Create">
+    <i class="fas fa-plus"></i> Agregar registro
+</a>
 
 <table id="records" class="table">
     <thead>
@@ -24,16 +26,15 @@
                 <td>@Html.DisplayFor(modelItem => registro.Fecha)</td>
                 <td>@Html.DisplayFor(modelItem => registro.Cantidad)</td>
                 <td>
-                    <a button type="button" class="btn-primary" asp-page="./Delete" asp-route-id="@registro.Id" >Borrar</a>
-                    <a button type="button" class="btn-primary" asp-page="./Update" asp-route-id="@registro.Id">Actualizar</a>
-                    
+                    <a class="btn btn-danger btn-sm" asp-page="./Delete" asp-route-id="@registro.Id">
+                        <i class="fas fa-trash-alt"></i> Borrar
+                    </a>
+                    <a class="btn btn-warning btn-sm" asp-page="./Update" asp-route-id="@registro.Id">
+                        <i class="fas fa-edit"></i> Actualizar
+                    </a>
                 </td>
             </tr>
-        
-        
-        
         }
-
     </tbody>
-
 </table>
+

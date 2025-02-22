@@ -1,6 +1,4 @@
-﻿
-
-@page
+﻿@page
 @model AguaTrack.Pages.CreateModel
 @{
 }
@@ -8,29 +6,30 @@
 <h2>Agregar Registro</h2>
 <hr />
 <div class="row">
-	<form method="post">
-		<div class="form-group">
-			<label asp-for="Agua.Fecha" class="control-label"></label>
-			<input type="date" asp-for="Agua.Fecha" class="form-control" />
-			<span asp-validation-for="Agua.Fecha" class="text-danger"></span>
-		</div>
-		<div class="form-group">
-			<label asp-for="Agua.Cantidad" class="control-label"></label>
-			<input asp-for="Agua.Cantidad" class="form-control"/>
-			<span asp-validation-for="Agua.Cantidad" class="text-danger"></span>
-		</div>
-		<div class="for-group">
-			<input type="submit" value="Create" class="btn btn-success" />
-		</div>
-	</form>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Agua.Fecha" class="control-label"></label>
+            <input type="date" asp-for="Agua.Fecha" class="form-control" />
+            <span asp-validation-for="Agua.Fecha" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Agua.Cantidad" class="control-label"></label>
+            <input asp-for="Agua.Cantidad" class="form-control" />
+            <span asp-validation-for="Agua.Cantidad" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Crear" class="btn btn-success btn-lg" />
+        </div>
+    </form>
 </div>
 
 <div>
-	<a asp-page="Index">Volver</a>
+    <a class="btn btn-secondary btn-sm" asp-page="Index"><i class="fas fa-arrow-left"></i> Volver</a>
 </div>
 
-@section Scripts {@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}}
-
-
-
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
 
